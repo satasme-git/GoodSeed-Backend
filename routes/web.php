@@ -26,5 +26,18 @@ Route::get('/addmember', function () {
 Route::get('/loginuser', function () {
     return view('Member.memberlogintest');
 });
-Route::resource('/api/user','MemberController');
-Route::post('/api/login','LoginController@loginCheck');
+
+
+Route::get('/testlogin', function () {
+    return view('testSociallogin');
+});
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('facebook')->user();
+
+    // $user->token
+});
+

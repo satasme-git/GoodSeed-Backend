@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::resource('/user','MemberController');
+Route::post('/login','LoginController@loginCheck');
+Route::post('/basic_details/{id}','MemberController@memberBasicdetails');
+
