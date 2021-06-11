@@ -26,18 +26,31 @@ Route::get('/addmember', function () {
 Route::get('/loginuser', function () {
     return view('Member.memberlogintest');
 });
+Route::resource('/api/user','MemberController');
+Route::post('/api/login','LoginController@loginCheck');
 
 
-Route::get('/testlogin', function () {
-    return view('testSociallogin');
+Route::get('/home', function () {
+    return view('home');
 });
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('google')->redirect();
+Route::get('/about', function () {
+    return view('about');
 });
-
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('facebook')->user();
-
-    // $user->token
+Route::get('/contact', function () {
+    return view('contact');
 });
-
+Route::get('/balancenutritions', function () {
+    return view('balancenutritions');
+});
+Route::get('/physicalactivities', function () {
+    return view('physicalactivities');
+});
+Route::get('/managingstress', function () {
+    return view('managingstress');
+});
+Route::get('/eliminationoftoxins', function () {
+    return view('eliminationoftoxins');
+});
+Route::get('/qualitysleep', function () {
+    return view('qualitysleep');
+});

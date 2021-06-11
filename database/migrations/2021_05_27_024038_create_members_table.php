@@ -16,14 +16,6 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
-            $table->string('name');
-            $table->string('dob');
-            $table->string('grade');
-            $table->string('class_number');
-            $table->string('height');
-            $table->string('weight');
-            $table->string('waist_size');
-            $table->string('parent_name');
             $table->string('status');
             $table->timestamps();
         });
